@@ -15,8 +15,8 @@ inputs = {
   rds_size = "db.t3.medium"
 
   # Basics
-  environment           = "productdev"
-  environment_short     = "pdev"
+  environment           = "techdev"
+  environment_short     = "tdev"
   aws_vpc               = "Bussvcs-Dev"
   aws_region            = "eu-west-2"
   aws_availability_zone = "eu-west-2a"
