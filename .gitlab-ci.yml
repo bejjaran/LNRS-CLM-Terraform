@@ -1,0 +1,29 @@
+
+# IOG Terragrunt Plugin
+include:
+  - project: iog/gitlab/gitlab-ci-plugins/terragrunt
+    file: plugin.yml
+    ref: 0.13.0
+
+# CI Jobs
+  - local: .jobs.gitlab-ci.yml
+
+# CI Stages
+stages:
+  - build
+  - deploy
+
+# Templates
+.build:
+  extends: .plugin-terragrunt-plan
+  stage: build
+  tags:
+    - productdev
+  when: manual
+
+.deploy:
+  extends: .plugin-terragrunt-apply
+  stage: deploy
+  tags:
+    - productdev
+  when: manual

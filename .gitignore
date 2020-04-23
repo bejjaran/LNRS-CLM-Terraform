@@ -1,0 +1,12 @@
+# Terragrunt Local Files
+**/.terragrunt-cache/*
+
+# VS Code Workspace
+*.workspace
+
+# Terraform State files
+*.tfstate
+*.tfstate.*
+
+# AWS Cred Generator
+aws_creds.py
