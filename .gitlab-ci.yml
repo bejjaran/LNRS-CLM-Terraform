@@ -18,16 +18,12 @@ stages:
   extends: .plugin-terragrunt-plan
   stage: build
   tags:
-    - boca
-    - docker
-    #- productdev
+    - productdev
   when: manual
 
 .deploy:
   extends: .plugin-terragrunt-apply
   stage: deploy
   tags:
-    - boca
-    - docker
-    #- productdev
+    - productdev
   when: manual
