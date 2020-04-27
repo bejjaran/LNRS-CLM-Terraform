@@ -7,20 +7,20 @@ resource "aws_db_subnet_group" "rds" {
 
 resource "aws_db_instance" "rds" {
   identifier                            = "${var.tag_application_short}-${var.environment_short}-rds"
-  allocated_storage                     = 100
-  max_allocated_storage                 = 200
-  storage_encrypted                     = true
+  allocated_storage                     = var.mssql_allocated_storage
+  max_allocated_storage                 = var.mssql_max_allocated_storage
+  storage_encrypted                     = var.mssql_storage_encrypted
   license_model                         = "license-included"
   storage_type                          = "gp2"
-  engine                                = "sqlserver-se"
-  engine_version                        = "14.00.3223.3.v1"
+  engine                                = var.mssql_engine
+  engine_version                        = var.mssql_engine_version
   instance_class                        = var.rds_size
   multi_az                              = true
   username                              = var.mssql_admin_username
   password                              = var.mssql_admin_password
   vpc_security_group_ids                = [aws_security_group.db.id]
   db_subnet_group_name                  = aws_db_subnet_group.rds.id
-  timezone                              = "US Eastern Standard Time"
+  timezone                              = var.mssql_timezone
   backup_retention_period               = 30
   backup_window                         = "23:00-02:00"
   copy_tags_to_snapshot                 = true
@@ -32,5 +32,5 @@ resource "aws_db_instance" "rds" {
   auto_minor_version_upgrade            = true
   maintenance_window                    = "Fri:04:20-Fri:05:20"
   deletion_protection                   = true
-  tags                                  = local.default_tags
+  tags                                  = merge(map("Name", "${var.environment}-mssql"), local.default_tags)
 }

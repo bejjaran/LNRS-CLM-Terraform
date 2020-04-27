@@ -97,6 +97,35 @@ variable "mssql_admin_password" {
   type = string
 }
 
+variable "mssql_storage_encrypted" {
+  type = bool
+  //default = true
+}
+
+variable "mssql_allocated_storage" {
+  type = number
+  //default = 100
+}
+
+variable "mssql_max_allocated_storage" {
+  type = number
+  //default = 200
+}
+
+variable "mssql_engine" {
+  type = string
+  //default = "sqlserver-se"
+}
+
+variable "mssql_engine_version" {
+  type = string
+  //default = "14.00.3281.6.v1"
+}
+variable "mssql_timezone" {
+  type = string
+  //default = "US Eastern Standard Time"  
+}
+
 ###########
 
 locals { 
