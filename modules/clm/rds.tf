@@ -15,7 +15,7 @@ resource "aws_db_instance" "rds" {
   engine                                = var.mssql_engine
   engine_version                        = var.mssql_engine_version
   instance_class                        = var.rds_size
-  multi_az                              = false
+  multi_az                              = var.rds_multi_az_config
   username                              = var.mssql_admin_username
   password                              = var.mssql_admin_password
   vpc_security_group_ids                = [aws_security_group.db.id]

@@ -61,6 +61,12 @@ variable "ami_id" {
 variable "rds_size" {
   description = "Instance type for RDS"
 }
+
+variable "rds_multi_az_config" {
+  description = "Instance multi AZ (true or false)"
+  type = bool
+}
+
 # Tags
 variable "tag_application" {
   description = "The name of the application for this build  (e.g bridger)"
