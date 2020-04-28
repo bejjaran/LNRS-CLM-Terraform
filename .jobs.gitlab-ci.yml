@@ -9,7 +9,6 @@ build-ris-bussvcs-dev/eu-west-2/pdev:
       )
     - export ADFS_ROLE_ARN=(
         'arn:aws:iam::152186781777:role/ADFS-TAS-Terraform'
-        'arn:aws:iam::152186781777:role/ADFS-AdminLinux'
       )
     - export TF_VAR_mssql_admin_username=$mssql_username
     - export TF_VAR_mssql_admin_password=$mssql_password
@@ -33,7 +32,6 @@ ris-bussvcs-dev/eu-west-2/pdev:
       )
     - export ADFS_ROLE_ARN=(
         'arn:aws:iam::152186781777:role/ADFS-TAS-Terraform'
-        'arn:aws:iam::152186781777:role/ADFS-AdminLinux'
       )
   dependencies: [build-ris-bussvcs-dev/eu-west-2/pdev]
   environment:
