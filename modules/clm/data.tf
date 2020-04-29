@@ -19,7 +19,8 @@ data "aws_subnet" "subnets" {
 data "aws_subnet_ids" "lb_private" {
   vpc_id = data.aws_vpc.selected.id
   tags = {
-    Name   = "${var.aws_vpc}-private-*"
+    #Name   = "${var.aws_vpc}-private-*"
+    Name   = "${var.aws_vpc} zone-* internal"
   }
 }
 
@@ -27,6 +28,7 @@ data "aws_subnet_ids" "lb_private" {
 data "aws_subnet_ids" "lb_public" {
   vpc_id = data.aws_vpc.selected.id
   tags = {
-    Name   = "${var.aws_vpc}-public-*"
+    #Name   = "${var.aws_vpc}-public-*"
+    Name   = "${var.aws_vpc} zone-* dmz"
   }
 }
