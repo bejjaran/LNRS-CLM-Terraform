@@ -1,26 +1,9 @@
-# Get ami
-data "aws_ami" "clm-pnc-ct" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["clm-pnc-ct-*"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  owners = ["599857236635"] # Canonical
-}
 
 # Launch Config
 resource "aws_launch_configuration" "web" {
 
   name_prefix     = "${var.environment}-${var.tag_application_short}-"
-  #image_id        = var.ami_id
-  image_id        = data.aws_ami.clm-pnc-ct.id
+  image_id        = var.ami_id
   instance_type   = var.instance_size
   security_groups = ["${aws_security_group.web.id}"]
 
