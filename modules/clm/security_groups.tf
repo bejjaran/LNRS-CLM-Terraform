@@ -5,7 +5,7 @@
 resource "aws_security_group" "web-lb" {
 
   name        = "${var.tag_application_short}-${var.environment_short}-web-lb"
-  description = title("${var.environment} PNC Web ALB Rules")
+  description = title("${var.environment} LNRS Web ALB Rules")
   vpc_id      = data.aws_vpc.selected.id
   tags        = merge(map("Name", "${var.tag_application_short}-${var.environment_short}-web-lb"), local.default_tags)
 
@@ -25,29 +25,29 @@ resource "aws_security_group" "web-lb" {
     description = "HTTPS Inbound"
   }  
 
-  ingress {
-    from_port   = "443"
-    to_port     = "443"
-    protocol    = "tcp"
-    cidr_blocks = ["83.231.190.26/32", "209.243.55.105/32", "66.241.32.168/32", "209.243.55.98/32", "209.243.55.101/32", "209.243.54.78/32"]
-    description = "HTTPS Internal NATs Inbound"
-  }
+  # ingress {
+  #   from_port   = "443"
+  #   to_port     = "443"
+  #   protocol    = "tcp"
+  #   cidr_blocks = ["83.231.190.26/32", "209.243.55.105/32", "66.241.32.168/32", "209.243.55.98/32", "209.243.55.101/32", "209.243.54.78/32"]
+  #   description = "HTTPS Internal NATs Inbound"
+  # }
 
-  ingress {
-    from_port   = "443"
-    to_port     = "443"
-    protocol    = "tcp"
-    cidr_blocks = ["212.38.169.106/32", "37.220.21.50/32", "77.240.14.105/32", "62.128.207.214/32", "217.194.217.82/32", "78.129.191.59/32", "78.129.191.58/32"]
-    description = "HTTPS External Monitoring Inbound"
-  }
+  # ingress {
+  #   from_port   = "443"
+  #   to_port     = "443"
+  #   protocol    = "tcp"
+  #   cidr_blocks = ["212.38.169.106/32", "37.220.21.50/32", "77.240.14.105/32", "62.128.207.214/32", "217.194.217.82/32", "78.129.191.59/32", "78.129.191.58/32"]
+  #   description = "HTTPS External Monitoring Inbound"
+  # }
 
-  egress {
-    from_port   = "443"
-    to_port     = "443"
-    protocol    = "tcp"
-    cidr_blocks = ["${data.aws_subnet.subnets["public"].cidr_block}"]
-    description = "Public Subnet - HTTPS Outbound"
-  }
+  # egress {
+  #   from_port   = "443"
+  #   to_port     = "443"
+  #   protocol    = "tcp"
+  #   cidr_blocks = ["${data.aws_subnet.subnets["public"].cidr_block}"]
+  #   description = "Public Subnet - HTTPS Outbound"
+  # }
 
 }
 
