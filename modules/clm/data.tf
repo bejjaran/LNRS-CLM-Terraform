@@ -11,7 +11,8 @@ data "aws_subnet" "subnets" {
 
   vpc_id   = data.aws_vpc.selected.id
   tags = {
-    Name   = "${var.aws_vpc}-${each.value}-${var.aws_availability_zone}"
+    #Name   = "${var.aws_vpc}-${each.value}-${var.aws_availability_zone}"
+    Name   = "${var.aws_vpc} zone-* ${each.value}"
   }
 }
 
