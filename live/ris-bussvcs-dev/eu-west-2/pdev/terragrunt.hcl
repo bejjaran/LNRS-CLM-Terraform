@@ -6,7 +6,7 @@ inputs = {
 
   # Launch Config
   instance_size = "t3.medium"
-  ami_id = "ami-0a03ed75a88fb8863"
+  ami_id = "ami-0c4805d43d99408f2"
   asg_min = 1
   asg_max = 1
   disk_size = 100
