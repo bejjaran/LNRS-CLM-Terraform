@@ -55,7 +55,7 @@ resource "aws_security_group" "web-lb" {
 resource "aws_security_group" "web" {
 
   name        = "${var.tag_application_short}-${var.environment_short}-web"
-  description = title("${var.environment} PNC Web Rules")
+  description = title("${var.environment} LNRS Web Rules")
   vpc_id      = data.aws_vpc.selected.id
   tags        = merge(map("Name", "${var.tag_application_short}-${var.environment_short}-web"), local.default_tags)
   
@@ -140,7 +140,7 @@ resource "aws_security_group" "web" {
 resource "aws_security_group" "db" {
 
   name        = "${var.tag_application_short}-${var.environment_short}-db"
-  description = title("${var.environment} PNC Database Rules")
+  description = title("${var.environment} LNRS Database Rules")
   vpc_id      = data.aws_vpc.selected.id
   tags        = merge(map("Name", "${var.tag_application_short}-${var.environment_short}-db-lb"), local.default_tags)
 

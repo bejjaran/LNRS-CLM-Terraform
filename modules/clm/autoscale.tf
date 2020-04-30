@@ -15,7 +15,7 @@ resource "aws_launch_configuration" "web" {
       volume_type = "gp2"
       volume_size = var.disk_size
       delete_on_termination = true
-      encrypted = true
+      encrypted = false
   }
 
   depends_on = [aws_security_group.web]
