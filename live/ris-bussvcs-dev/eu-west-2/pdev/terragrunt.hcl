@@ -15,11 +15,11 @@ inputs = {
   rds_size = "db.t3.medium"
   rds_multi_az_config = false
   mssql_storage_encrypted = false
-  mssql_allocated_storage = 100
-  mssql_max_allocated_storage = 200
+  mssql_allocated_storage = 20
+  mssql_max_allocated_storage = 50
   mssql_engine = "sqlserver-ex"
   mssql_engine_version = "14.00.3281.6.v1"
-  mssql_timezone = "US Eastern Standard Time"
+  mssql_timezone = "GMT Standard Time"
 
   # Basics
   environment           = "productdev"
