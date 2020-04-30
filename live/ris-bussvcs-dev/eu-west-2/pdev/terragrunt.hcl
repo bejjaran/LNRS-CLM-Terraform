@@ -14,7 +14,7 @@ inputs = {
   # RDS Config
   rds_size = "db.t3.medium"
   rds_multi_az_config = false
-  mssql_storage_encrypted = true
+  mssql_storage_encrypted = false
   mssql_allocated_storage = 100
   mssql_max_allocated_storage = 200
   mssql_engine = "sqlserver-ex"
