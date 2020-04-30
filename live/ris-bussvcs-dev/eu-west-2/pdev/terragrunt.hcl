@@ -17,7 +17,7 @@ inputs = {
   mssql_storage_encrypted = true
   mssql_allocated_storage = 100
   mssql_max_allocated_storage = 200
-  mssql_engine = "sqlserver-se"
+  mssql_engine = "sqlserver-ex"
   mssql_engine_version = "14.00.3281.6.v1"
   mssql_timezone = "US Eastern Standard Time"
 
