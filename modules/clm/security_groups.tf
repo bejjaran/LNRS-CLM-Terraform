@@ -41,13 +41,13 @@ resource "aws_security_group" "web-lb" {
   #   description = "HTTPS External Monitoring Inbound"
   # }
 
-  # egress {
-  #   from_port   = "443"
-  #   to_port     = "443"
-  #   protocol    = "tcp"
-  #   cidr_blocks = ["${data.aws_subnet.subnets["public"].cidr_block}"]
-  #   description = "Public Subnet - HTTPS Outbound"
-  # }
+  egress {
+    from_port   = "443"
+    to_port     = "443"
+    protocol    = "tcp"
+    cidr_blocks = ["${data.aws_subnet.subnets["public"].cidr_block}"]
+    description = "Public Subnet - HTTPS Outbound"
+  }
 
 }
 
