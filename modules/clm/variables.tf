@@ -18,7 +18,6 @@ variable "aws_vpc" {
 
 variable "aws_subnet_types" {
   type = set(string)
-  #default = ["public", "private"]
   default = ["dmz", "internal"]
   description = "The Types of subnet we need to obtain IDs from (e.g public and private)"
 }
