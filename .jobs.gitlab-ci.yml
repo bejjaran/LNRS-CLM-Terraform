@@ -43,3 +43,49 @@ ris-bussvcs-dev/eu-west-2/pdev:
       - live/ris-bussvcs-dev/eu-west-2/pdev/**/*
       - live/*.hcl
       - modules/**/*
+
+build-ris-bussvcs-dev/eu-west-2/tdev:
+  extends: .build
+  variables:
+    ROOT_DIR: 'live/ris-bussvcs-dev/eu-west-2/tdev'
+    AWS_PROFILE: 'ris-bussvcs-dev'
+  before_script:
+    - export ADFS_PROFILE=(
+        'ris-bussvcs-dev'
+      )
+    - export ADFS_ROLE_ARN=(
+        'arn:aws:iam::152186781777:role/ADFS-TAS-Terraform'
+      )
+    - export TF_VAR_mssql_admin_username=$mssql_username
+    - export TF_VAR_mssql_admin_password=$mssql_password
+  only:
+    refs:
+      - merge_requests
+      - master
+    changes:
+      - live/ris-bussvcs-dev/eu-west-2/tdev/**/*
+      - live/*.hcl
+      - modules/**/*
+
+ris-bussvcs-dev/eu-west-2/tdev:
+  extends: .deploy
+  variables:
+    ROOT_DIR: 'live/ris-bussvcs-dev/eu-west-2/tdev'
+    AWS_PROFILE: 'ris-bussvcs-dev'
+  before_script:
+    - export ADFS_PROFILE=(
+        'ris-bussvcs-dev'
+      )
+    - export ADFS_ROLE_ARN=(
+        'arn:aws:iam::152186781777:role/ADFS-TAS-Terraform'
+      )
+  dependencies: [build-ris-bussvcs-dev/eu-west-2/tdev]
+  environment:
+    name: ris-bussvcs-dev/eu-west-2/tdev
+  only:
+    refs:
+      - master
+    changes:
+      - live/ris-bussvcs-dev/eu-west-2/tdev/**/*
+      - live/*.hcl
+      - modules/**/*

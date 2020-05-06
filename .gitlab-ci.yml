@@ -20,7 +20,7 @@ stages:
   tags:
     - boca
     - docker
-    #- productdev
+    #- dev
   when: manual
 
 .deploy:
@@ -29,5 +29,5 @@ stages:
   tags:
     - boca
     - docker
-    #- productdev
+    #- dev
   when: manual

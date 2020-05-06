@@ -6,13 +6,20 @@ inputs = {
 
   # Launch Config
   instance_size = "t3.medium"
-  ami_id = ""
+  ami_id = "ami-0a09aecb473e3df71"
   asg_min = 1
   asg_max = 1
   disk_size = 100
 
-  # RDS Instance Type
+  # RDS Config
   rds_size = "db.t3.medium"
+  rds_multi_az_config = false
+  mssql_storage_encrypted = false
+  mssql_allocated_storage = 20
+  mssql_max_allocated_storage = 50
+  mssql_engine = "sqlserver-ex"
+  mssql_engine_version = "14.00.3281.6.v1"
+  mssql_timezone = "GMT Standard Time"
 
   # Basics
   environment           = "techdev"
