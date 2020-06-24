@@ -6,7 +6,7 @@ inputs = {
 
   # Launch Config
   instance_size = "t3.medium"
-  ami_id = "ami-042a1af2ea98de785" # sprint11
+  ami_id = "ami-00e40949badb1451b" # sprint11, collapse build branches
   asg_min = 1
   asg_max = 1
   disk_size = 100
