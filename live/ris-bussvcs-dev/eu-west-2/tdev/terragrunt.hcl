@@ -6,7 +6,7 @@ inputs = {
 
   # Launch Config
   instance_size = "t3.medium"
-  ami_id = "ami-00e40949badb1451b" # sprint11, collapse build branches
+  ami_id = "ami-01eb5794605ae5510" # sprint11, disable sb config
   asg_min = 1
   asg_max = 1
   disk_size = 100
