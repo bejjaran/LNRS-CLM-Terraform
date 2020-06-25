@@ -7,8 +7,8 @@ inputs = {
   # Launch Config
   instance_size = "t3.medium"
   ami_id = "ami-01eb5794605ae5510" # sprint11, disable sb config
-  asg_min = 1
-  asg_max = 1
+  asg_min = 2
+  asg_max = 2
   disk_size = 100
 
   # RDS Config
