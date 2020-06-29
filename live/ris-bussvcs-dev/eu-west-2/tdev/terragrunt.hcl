@@ -26,7 +26,7 @@ inputs = {
   environment_short     = "tdev"
   aws_vpc               = "Bussvcs-Dev"
   aws_region            = "eu-west-2"
-  aws_availability_zone = "eu-west-2c" # move back to 2a
+  aws_availability_zone = "eu-west-2a" # changing this has no effect, look into
 
   # SSL Certificate
   certificate_arn   = "arn:aws:acm:eu-west-2:152186781777:certificate/94738d88-1de1-47c0-b0fb-e90aa4a7741b"
