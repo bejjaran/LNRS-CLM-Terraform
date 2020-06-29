@@ -7,8 +7,8 @@ inputs = {
   # Launch Config
   instance_size = "t3.medium"
   ami_id = "ami-01eb5794605ae5510" # sprint11, disable sb config
-  asg_min = 2
-  asg_max = 2
+  asg_min = 3
+  asg_max = 3
   disk_size = 100
 
   # RDS Config
@@ -26,7 +26,7 @@ inputs = {
   environment_short     = "tdev"
   aws_vpc               = "Bussvcs-Dev"
   aws_region            = "eu-west-2"
-  aws_availability_zone = "eu-west-2c"
+  aws_availability_zone = "eu-west-2a"
 
   # SSL Certificate
   certificate_arn   = "arn:aws:acm:eu-west-2:152186781777:certificate/94738d88-1de1-47c0-b0fb-e90aa4a7741b"
