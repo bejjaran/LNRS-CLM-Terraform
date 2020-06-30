@@ -7,8 +7,8 @@ inputs = {
   # Launch Config
   instance_size = "t3.medium"
   ami_id = "ami-0e158bdc1703f1bc8" # lnrs-clm-sb (move sb config to post)
-  asg_min = 3
-  asg_max = 3
+  asg_min = 2
+  asg_max = 2
   disk_size = 100
 
   # RDS Config
