@@ -6,7 +6,7 @@ inputs = {
 
   # Launch Config
   instance_size = "t3.medium"
-  ami_id = "ami-01eb5794605ae5510" # sprint11, disable sb config
+  ami_id = "ami-0e158bdc1703f1bc8" # lnrs-clm-sb (move sb config to post)
   asg_min = 3
   asg_max = 3
   disk_size = 100
