@@ -6,7 +6,7 @@ inputs = {
 
   # Launch Config
   instance_size = "t3.medium"
-  ami_id = "ami-008582abb82bfb1a7" # lnrs-clm-sb 7/2
+  ami_id = "ami-0628d65587bdffda1" # sprint 12 & sbconf enc
   asg_min = 2
   asg_max = 2
   disk_size = 100
