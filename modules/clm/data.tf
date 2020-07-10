@@ -33,6 +33,3 @@ data "aws_subnet_ids" "lb_public" {
     Name   = "${var.aws_vpc} zone-* dmz"
   }
 }
-
-# **
-# data "aws_availability_zones" "all" {}

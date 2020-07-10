@@ -34,8 +34,6 @@ resource "aws_autoscaling_group" "web" {
   target_group_arns    = ["${aws_lb_target_group.web-443.arn}"]
   vpc_zone_identifier  = ["${data.aws_subnet.subnets["dmz"].id}"]
   termination_policies = ["OldestInstance"]
-  # **
-  availability_zones      = ["eu-west-2a", "eu-west-2b"]
 
   enabled_metrics = [
     "GroupDesiredCapacity",
