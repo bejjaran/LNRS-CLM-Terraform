@@ -35,8 +35,8 @@ resource "aws_autoscaling_group" "web" {
   vpc_zone_identifier  = ["${data.aws_subnet.subnets["dmz"].id}"]
   termination_policies = ["OldestInstance"]
   # **
-  availability_zones      = ["${data.aws_availability_zones.all.names}"]
-  
+  availability_zones      = ["eu-west-2a", "eu-west-2b"]
+
   enabled_metrics = [
     "GroupDesiredCapacity",
     "GroupInServiceCapacity",
