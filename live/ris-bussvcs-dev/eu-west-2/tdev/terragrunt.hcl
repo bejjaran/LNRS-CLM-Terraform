@@ -6,7 +6,7 @@ inputs = {
 
   # Launch Config
   instance_size = "t3.medium"
-  ami_id = "ami-0628d65587bdffda1" # sprint 12 & sbconf enc
+  ami_id = "ami-0388b3bbb09005003" # sprint 13 & AZ split
   asg_min = 2
   asg_max = 2
   disk_size = 100
