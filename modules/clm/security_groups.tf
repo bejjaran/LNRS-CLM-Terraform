@@ -45,7 +45,8 @@ resource "aws_security_group" "web-lb" {
     from_port   = "443"
     to_port     = "443"
     protocol    = "tcp"
-    cidr_blocks = ["${data.aws_subnet.subnets["dmz"].cidr_block}"]
+    #cidr_blocks = ["${data.aws_subnet.subnets["dmz"].cidr_block}"]
+    cidr_blocks = ["10.22.96.0/26", "10.22.96.64/26", "10.22.96.128/26"]
     description = "Public Subnet - HTTPS Outbound"
   }
 

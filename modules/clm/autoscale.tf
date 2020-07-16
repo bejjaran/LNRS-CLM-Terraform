@@ -32,7 +32,8 @@ resource "aws_autoscaling_group" "web" {
   desired_capacity     = var.asg_min
   launch_configuration = aws_launch_configuration.web.name
   target_group_arns    = ["${aws_lb_target_group.web-443.arn}"]
-  vpc_zone_identifier  = ["${data.aws_subnet.subnets["dmz"].id}"]
+  #vpc_zone_identifier  = ["${data.aws_subnet.subnets["dmz"].id}"]
+  vpc_zone_identifier  = flatten(["${data.aws_subnet_ids.lb_public.ids}"])
   termination_policies = ["OldestInstance"]
 
   enabled_metrics = [
