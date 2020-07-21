@@ -7,8 +7,8 @@ inputs = {
   # Launch Config
   instance_size = "t3.medium"
   ami_id = "ami-044c3a89cacfd9529" # sprint 13 & add multi-subnet to conn string
-  asg_min = 2
-  asg_max = 2
+  asg_min = 1
+  asg_max = 1
   disk_size = 100
 
   # RDS Config
