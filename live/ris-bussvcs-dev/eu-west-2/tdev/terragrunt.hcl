@@ -6,7 +6,7 @@ inputs = {
 
   # Launch Config
   instance_size = "t3.medium"
-  ami_id = "ami-0388b3bbb09005003" # sprint 13 & AZ split
+  ami_id = "ami-044c3a89cacfd9529" # sprint 13 & add multi-subnet to conn string
   asg_min = 2
   asg_max = 2
   disk_size = 100
