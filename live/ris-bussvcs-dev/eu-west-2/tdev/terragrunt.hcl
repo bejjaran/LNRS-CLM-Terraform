@@ -6,7 +6,7 @@ inputs = {
 
   # Launch Config
   instance_size = "t3.medium"
-  ami_id = "ami-044c3a89cacfd9529" # sprint 13 & add multi-subnet to conn string
+  ami_id = "ami-070352935db353574" # sprint 13 & add bundle feature
   asg_min = 1
   asg_max = 1
   disk_size = 100
