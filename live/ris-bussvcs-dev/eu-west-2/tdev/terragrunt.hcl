@@ -26,7 +26,7 @@ inputs = {
   environment_short     = "tdev"
   aws_vpc               = "Bussvcs-Dev"
   aws_region            = "eu-west-2"
-  # aws_availability_zone = "eu-west-2a"
+  aws_availability_zone = "eu-west-2a"
 
   # Define subnets & LB SG Egress CIDR due to differences in subnet naming between regions 
   aws_private_subnet  = "Bussvcs-Dev zone-a internal"

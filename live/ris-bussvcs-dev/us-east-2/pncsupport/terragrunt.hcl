@@ -26,7 +26,7 @@ inputs = {
   environment_short     = "pncsup"
   aws_vpc               = "bridger-dev"
   aws_region            = "us-east-2"
-  # aws_availability_zone = "us-east-2a"
+  aws_availability_zone = "us-east-2a"
 
   # Define subnets & LB SG Egress CIDR due to differences in subnet naming between regions 
   aws_private_subnet  = "bridger-dev-private-us-east-2a"
