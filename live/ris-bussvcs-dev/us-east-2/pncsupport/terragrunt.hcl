@@ -29,7 +29,7 @@ inputs = {
   aws_availability_zone = "us-east-2a"
 
   # SSL Certificate
-  certificate_arn   = "arn:aws:acm:eu-west-2:152186781777:certificate/94738d88-1de1-47c0-b0fb-e90aa4a7741b"
+  certificate_arn   = "arn:aws:acm:us-east-2:152186781777:certificate/07e86f6a-92e5-4058-a639-25d9a176bbf1"
   
   # Tags
   tag_owner_email   = "tas-uk@lexisnexisrisk.com"
