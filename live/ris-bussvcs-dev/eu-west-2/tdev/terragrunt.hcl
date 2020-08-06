@@ -29,8 +29,8 @@ inputs = {
   aws_availability_zone = "eu-west-2a"
 
   # Define subnets & LB SG Egress CIDR due to differences in subnet naming between regions 
-  aws_private_subnet  = "Bussvcs-Dev zone-a internal"
-  aws_public_subnet   = "Bussvcs-Dev zone-a dmz"
+  aws_private_subnet  = "Bussvcs-Dev zone-* internal"
+  aws_public_subnet   = "Bussvcs-Dev zone-* dmz"
   aws_public_subnet_cidr = ["10.22.96.0/26", "10.22.96.64/26", "10.22.96.128/26"]
 
   # SSL Certificate
