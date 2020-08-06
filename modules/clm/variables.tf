@@ -28,8 +28,13 @@ variable "aws_availability_zone" {
 
 variable "aws_lb_subnets" {
   type = set(string)
-  default = ["eu-west-2a", "eu-west-2b"]
+  #default = ["eu-west-2a", "eu-west-2b"]
   description = "The subnets you wish to deploy load balancers into (e.g eu-west-1a, eu-west-1b)"
+}
+
+variable "aws_public_subnet_cidr" {
+  type = set(string)
+  description = "The public subnet CIDR for LB Egress SG"
 }
 
 variable "certificate_arn" {

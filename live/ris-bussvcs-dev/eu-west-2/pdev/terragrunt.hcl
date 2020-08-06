@@ -26,7 +26,12 @@ inputs = {
   environment_short     = "pdev"
   aws_vpc               = "Bussvcs-Dev"
   aws_region            = "eu-west-2"
-  aws_availability_zone = "eu-west-2a"
+  # aws_availability_zone = "eu-west-2a"
+
+  # Define subnets & LB SG Egress CIDR due to differences in subnet naming between regions 
+  aws_private_subnet  = "Bussvcs-Dev zone-a internal"
+  aws_public_subnet   = "Bussvcs-Dev zone-a dmz"
+  aws_public_subnet_cidr = ["10.22.96.0/26", "10.22.96.64/26", "10.22.96.128/26"]
 
   # SSL Certificate
   certificate_arn   = "arn:aws:acm:eu-west-2:152186781777:certificate/94738d88-1de1-47c0-b0fb-e90aa4a7741b"
