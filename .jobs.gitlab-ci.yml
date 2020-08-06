@@ -89,3 +89,50 @@ ris-bussvcs-dev/eu-west-2/tdev:
       - live/ris-bussvcs-dev/eu-west-2/tdev/**/*
       - live/*.hcl
       - modules/**/*
+
+build-ris-bussvcs-dev/us-east-2/pncsupport:
+  extends: .build
+  variables:
+    ROOT_DIR: 'live/ris-bussvcs-dev/us-east-2/pncsupport'
+    AWS_PROFILE: 'ris-bussvcs-dev'
+  before_script:
+    - export ADFS_PROFILE=(
+        'ris-bussvcs-dev'
+      )
+    - export ADFS_ROLE_ARN=(
+        'arn:aws:iam::152186781777:role/ADFS-TAS-Terraform'
+      )
+    - export TF_VAR_mssql_admin_username=$mssql_username
+    - export TF_VAR_mssql_admin_password=$mssql_password
+  only:
+    refs:
+      - merge_requests
+      - master
+    changes:
+      - live/ris-bussvcs-dev/us-east-2/pncsupport/**/*
+      - live/*.hcl
+      - modules/**/*
+
+ris-bussvcs-dev/us-east-2/pncsupport:
+  extends: .deploy
+  variables:
+    ROOT_DIR: 'live/ris-bussvcs-dev/us-east-2/pncsupport'
+    AWS_PROFILE: 'ris-bussvcs-dev'
+  before_script:
+    - export ADFS_PROFILE=(
+        'ris-bussvcs-dev'
+      )
+    - export ADFS_ROLE_ARN=(
+        'arn:aws:iam::152186781777:role/ADFS-TAS-Terraform'
+      )
+  dependencies: [build-ris-bussvcs-dev/us-east-2/pncsupport]
+  environment:
+    name: ris-bussvcs-dev/us-east-2/pncsupport
+  only:
+    refs:
+      - master
+    changes:
+      - live/ris-bussvcs-dev/us-east-2/pncsupport/**/*
+      - live/*.hcl
+      - modules/**/*
+
