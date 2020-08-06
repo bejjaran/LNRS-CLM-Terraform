@@ -32,6 +32,14 @@ variable "aws_lb_subnets" {
   description = "The subnets you wish to deploy load balancers into (e.g eu-west-1a, eu-west-1b)"
 }
 
+variable "aws_private_subnet" {
+  description = "The private subnet"
+}
+
+variable "aws_public_subnet" {
+  description = "The private subnet"
+}
+
 variable "aws_public_subnet_cidr" {
   type = set(string)
   description = "The public subnet CIDR for LB Egress SG"
