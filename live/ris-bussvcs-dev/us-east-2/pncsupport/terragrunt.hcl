@@ -34,7 +34,7 @@ inputs = {
   aws_public_subnet_cidr = ["10.245.94.0/28", "10.245.94.16/28", "10.245.94.32/28"]
 
   # SSL Certificate
-  certificate_arn   = "arn:aws:acm:us-east-2:152186781777:certificate/07e86f6a-92e5-4058-a639-25d9a176bbf1"
+  certificate_arn   = "arn:aws:acm:us-east-2:152186781777:certificate/4a57f981-84da-412b-8537-6887bab2d740"
   
   # Tags
   tag_owner_email   = "tas-uk@lexisnexisrisk.com"
