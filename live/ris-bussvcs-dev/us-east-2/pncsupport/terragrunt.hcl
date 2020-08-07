@@ -6,7 +6,7 @@ inputs = {
 
   # Launch Config
   instance_size = "t3.medium"
-  ami_id = "ami-070352935db353574" # sprint 13 & add bundle feature
+  ami_id = "ami-0e0c85ccde7ef128a" # sprint 15
   asg_min = 1
   asg_max = 1
   disk_size = 100
