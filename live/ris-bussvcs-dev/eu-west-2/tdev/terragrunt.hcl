@@ -6,7 +6,7 @@ inputs = {
 
   # Launch Config
   instance_size = "t3.medium"
-  ami_id = "ami-0c5e42e64acc41a0e" # sprint 15 2.0
+  ami_id = "ami-0b1038d5ee07f0b80" # 2.1.1
   asg_min = 1
   asg_max = 1
   disk_size = 100
