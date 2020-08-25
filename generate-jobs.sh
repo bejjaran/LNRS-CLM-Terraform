@@ -1,6 +1,7 @@
 #!/bin/bash
 declare -A ADFS_ROLE_ARN_MAP=(
   [ris-bussvcs-dev]="arn:aws:iam::152186781777:role/ADFS-TAS-Terraform"
+  [ris-bussvcs-prod]="arn:aws:iam::485575125510:role/ADFS-TAS-Terraform"
 )
 
 for accountPath in live/* ; do
