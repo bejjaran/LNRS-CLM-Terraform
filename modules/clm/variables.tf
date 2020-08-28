@@ -150,17 +150,16 @@ variable "mssql_timezone" {
 locals { 
 
   default_tags = {
-    "market"        = "business"
-    "BusinessUnit"  = "Business Services"
-    "Owner"         = var.tag_owner
+    "market"        = "uk"
+    "bu"            = "business services"
+    "product"       = "lnrs clm"
+    "owner"         = var.tag_owner
+    "costcenter"    = "unknown"
     "lifecycle"     = var.environment
     "owner_email"   = var.tag_owner_email
     "support_email" = var.tag_support_email
-    "product"       = "LNRS CLM"
     "application"   = var.tag_application
-    "service"       = "CLM"
-    "project"       = "LNRS CLM"
-    "c7n:schedule"  = "off"
+    "data"          = "pii"
   }
 
 }

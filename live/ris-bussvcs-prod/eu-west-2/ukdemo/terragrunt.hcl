@@ -37,7 +37,7 @@ inputs = {
   certificate_arn   = "arn:aws:acm:eu-west-2:485575125510:certificate/e148f706-3b76-4566-9e9c-6a2edf9060c6"
   
   # Tags
-  tag_owner_email   = "tas-uk@lexisnexisrisk.com"
-  tag_support_email = "tas-uk@lexisnexisrisk.com"
+  tag_owner_email   = "tas-global@lexisnexisrisk.com"
+  tag_support_email = "tas-global@lexisnexisrisk.com"
 
 }
