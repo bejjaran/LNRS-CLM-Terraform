@@ -136,10 +136,10 @@ ris-bussvcs-dev/us-east-2/pncsupport:
       - live/*.hcl
       - modules/**/*
 
-build-ris-bussvcs-prod/eu-west-2/demo:
+build-ris-bussvcs-prod/eu-west-2/ukdemo:
   extends: .build
   variables:
-    ROOT_DIR: 'live/ris-bussvcs-prod/eu-west-2/demo'
+    ROOT_DIR: 'live/ris-bussvcs-prod/eu-west-2/ukdemo'
     AWS_PROFILE: 'ris-bussvcs-prod'
   before_script:
     - export ADFS_PROFILE=(
@@ -157,14 +157,14 @@ build-ris-bussvcs-prod/eu-west-2/demo:
       - merge_requests
       - master
     changes:
-      - live/ris-bussvcs-prod/eu-west-2/demo/**/*
+      - live/ris-bussvcs-prod/eu-west-2/ukdemo/**/*
       - live/*.hcl
       - modules/**/*
 
-ris-bussvcs-prod/eu-west-2/demo:
+ris-bussvcs-prod/eu-west-2/ukdemo:
   extends: .deploy
   variables:
-    ROOT_DIR: 'live/ris-bussvcs-prod/eu-west-2/demo'
+    ROOT_DIR: 'live/ris-bussvcs-prod/eu-west-2/ukdemo'
     AWS_PROFILE: 'ris-bussvcs-prod'
   before_script:
     - export ADFS_PROFILE=(
@@ -175,14 +175,14 @@ ris-bussvcs-prod/eu-west-2/demo:
         'arn:aws:iam::485575125510:role/ADFS-TAS-Terraform'
         'arn:aws:iam::152186781777:role/ADFS-TAS-Terraform'
       )
-  dependencies: [build-ris-bussvcs-prod/eu-west-2/demo]
+  dependencies: [build-ris-bussvcs-prod/eu-west-2/ukdemo]
   environment:
-    name: ris-bussvcs-prod/eu-west-2/demo
+    name: ris-bussvcs-prod/eu-west-2/ukdemo
   only:
     refs:
       - master
     changes:
-      - live/ris-bussvcs-prod/eu-west-2/demo/**/*
+      - live/ris-bussvcs-prod/eu-west-2/ukdemo/**/*
       - live/*.hcl
       - modules/**/*
 
