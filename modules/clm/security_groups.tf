@@ -135,6 +135,46 @@ resource "aws_security_group" "web" {
     description = "SMTP Outbound"
   }
 
+  egress {
+    from_port   = "5062"
+    to_port     = "5062"
+    protocol    = "TCP"
+    cidr_blocks = ["10.240.38.33/32", "10.240.62.173/32"]
+    description = "TEMP - Logstash Staging Outbound"
+  }
+
+  egress {
+    from_port   = "9200"
+    to_port     = "9200"
+    protocol    = "TCP"
+    cidr_blocks = ["10.240.62.172/32", "10.240.62.173/32", "10.240.62.174/32"]
+    description = "TEMP - Elasticsearch Staging Outbound"
+  }
+
+  egress {
+    from_port   = "5062"
+    to_port     = "5062"
+    protocol    = "TCP"
+    cidr_blocks = ["10.246.28.121/32"]
+    description = "Logstash Outbound - Boca VIP"
+  }
+
+    egress {
+    from_port   = "5062"
+    to_port     = "5062"
+    protocol    = "TCP"
+    cidr_blocks = ["10.247.31.174/32"]
+    description = "Logstash Outbound - Alpharetta VIP"
+  }
+
+    egress {
+    from_port   = "9200"
+    to_port     = "9200"
+    protocol    = "TCP"
+    cidr_blocks = ["10.246.28.123/32"]
+    description = "Elasticsearch Outbound - Boca VIP"
+  }
+
   depends_on = [aws_security_group.web-lb, aws_security_group.db]
 
 }
