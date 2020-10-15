@@ -70,6 +70,10 @@ variable "ami_id" {
   description = "AMI ID to be used in the Launch Config"
 }
 
+variable "iam_role" {
+  description = "IAM Role to be used in the Launch Config for Cloudwatch agent"
+}
+
 # RDS Size
 variable "rds_size" {
   description = "Instance type for RDS"

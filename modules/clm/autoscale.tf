@@ -7,6 +7,7 @@ resource "aws_launch_configuration" "web" {
   instance_type   = var.instance_size
   security_groups = ["${aws_security_group.web.id}"]
   associate_public_ip_address = true
+  iam_instance_profile = var.iam_role
 
   lifecycle {
     create_before_destroy = true
