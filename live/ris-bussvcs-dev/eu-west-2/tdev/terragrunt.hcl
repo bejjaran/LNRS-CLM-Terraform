@@ -8,8 +8,8 @@ inputs = {
   instance_size = "t3.medium"
   ami_id = "ami-065a8758064251e59" # 2.3.2
   iam_role = "TAS_Monitoring"
-  asg_min = 1
-  asg_max = 1
+  asg_min = 2
+  asg_max = 2
   disk_size = 100
 
   # RDS Config
