@@ -20,7 +20,7 @@ inputs = {
   mssql_max_allocated_storage = 50
   mssql_engine = "sqlserver-ex"
   mssql_engine_version = "14.00.3281.6.v1"
-  mssql_timezone = "GMT Standard Time"
+  mssql_timezone = "US Eastern Standard Time"
 
   # Basics
   environment           = "tmxdemo"
@@ -40,5 +40,6 @@ inputs = {
   # Tags
   tag_owner_email   = "tas-global@lexisnexisrisk.com"
   tag_support_email = "tas-global@lexisnexisrisk.com"
+  tag_market        = "us"
 
 }
