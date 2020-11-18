@@ -110,6 +110,11 @@ variable "tag_support_email" {
   default     = ""
 }
 
+variable "tag_market" {
+  description = "The market for this build; LNRS AWS requirement (e.g. us, uk)"
+  default     = ""
+}
+
 // Username for the administrator DB user.
 variable "mssql_admin_username" {
   type = string
@@ -154,7 +159,7 @@ variable "mssql_timezone" {
 locals { 
 
   default_tags = {
-    "market"        = "uk"
+    "market"        = var.tag_market
     "bu"            = "business services"
     "product"       = "lnrs clm"
     "owner"         = var.tag_owner

@@ -40,5 +40,6 @@ inputs = {
   # Tags
   tag_owner_email   = "tas-global@lexisnexisrisk.com"
   tag_support_email = "tas-global@lexisnexisrisk.com"
+  tag_market        = "uk"
 
 }
