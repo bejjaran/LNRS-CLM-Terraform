@@ -34,6 +34,10 @@ inputs = {
   aws_public_subnet   = "clm-dev-public-us-east-1*"
   aws_public_subnet_cidr = ["10.245.105.0/28", "10.245.105.16/28", "10.245.105.32/28"]
 
+  # Limit ASG to zones A & B
+  aws_public_subnet_az_a   = "subnet-0fc00c141c5c1b21a"
+  aws_public_subnet_az_b   = "subnet-05a6a4c353b58fa4f"
+
   # SSL Certificate
   certificate_arn   = "arn:aws:acm:us-east-1:152186781777:certificate/b0bdd62e-9dd0-4650-8efc-09817e048d3b"
   

@@ -40,6 +40,14 @@ variable "aws_public_subnet" {
   description = "The private subnet"
 }
 
+variable "aws_public_subnet_az_a" {
+  description = "Public subnet az a"
+}
+
+variable "aws_public_subnet_az_b" {
+  description = "Public subnet az b"
+}
+
 variable "aws_public_subnet_cidr" {
   type = set(string)
   description = "The public subnet CIDR for LB Egress SG"

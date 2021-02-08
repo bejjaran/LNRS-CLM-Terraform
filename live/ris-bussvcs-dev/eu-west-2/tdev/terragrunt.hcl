@@ -34,6 +34,10 @@ inputs = {
   aws_public_subnet   = "Bussvcs-Dev zone-* dmz"
   aws_public_subnet_cidr = ["10.22.96.0/26", "10.22.96.64/26", "10.22.96.128/26"]
 
+  # Limit ASG to zones A & B
+  aws_public_subnet_az_a   = "subnet-adb752d7"
+  aws_public_subnet_az_b   = "subnet-b9bc97f4"
+
   # SSL Certificate
   certificate_arn   = "arn:aws:acm:eu-west-2:152186781777:certificate/94738d88-1de1-47c0-b0fb-e90aa4a7741b"
   

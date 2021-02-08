@@ -34,7 +34,9 @@ resource "aws_autoscaling_group" "web" {
   launch_configuration = aws_launch_configuration.web.name
   target_group_arns    = ["${aws_lb_target_group.web-443.arn}"]
   #vpc_zone_identifier  = ["${data.aws_subnet.subnets["dmz"].id}"]
-  vpc_zone_identifier  = flatten(["${data.aws_subnet_ids.lb_public.ids}"])
+  #vpc_zone_identifier  = flatten(["${data.aws_subnet_ids.lb_public.ids}"])
+  # Limit ASG to zones A & B
+  vpc_zone_identifier   = [var.aws_public_subnet_az_a, var.aws_public_subnet_az_b]
   termination_policies = ["OldestInstance"]
 
   enabled_metrics = [

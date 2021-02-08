@@ -34,6 +34,10 @@ inputs = {
   aws_public_subnet   = "bridger-dev-public-us-east-2*"
   aws_public_subnet_cidr = ["10.245.94.0/28", "10.245.94.16/28", "10.245.94.32/28"]
 
+  # Limit ASG to zones A & B
+  aws_public_subnet_az_a   = "subnet-07dc3241ba1a1c44a"
+  aws_public_subnet_az_b   = "subnet-0bb7375df1521d6a1"
+
   # SSL Certificate
   certificate_arn   = "arn:aws:acm:us-east-2:152186781777:certificate/4a57f981-84da-412b-8537-6887bab2d740"
   
