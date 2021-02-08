@@ -6,7 +6,7 @@ inputs = {
 
   # Launch Config
   instance_size = "t3.medium"
-  ami_id = "ami-0979aae2ca374c8dd" # 1.0.15
+  ami_id = "" # 2.3.2
   iam_role = "TAS-Monitoring"
   asg_min = 1
   asg_max = 1
@@ -20,23 +20,19 @@ inputs = {
   mssql_max_allocated_storage = 50
   mssql_engine = "sqlserver-ex"
   mssql_engine_version = "14.00.3281.6.v1"
-  mssql_timezone = "GMT Standard Time"
+  mssql_timezone = "US Eastern Standard Time"
 
   # Basics
-  environment           = "ukdemo"
-  environment_short     = "ukdemo"
+  environment           = "usdemo"
+  environment_short     = "usdemo"
   aws_vpc               = "lnrs-clm-prod"
-  aws_region            = "eu-west-2"
-  aws_availability_zone = "eu-west-2a"
+  aws_region            = "us-east-2"
+  aws_availability_zone = "us-east-2a"
 
   # Define subnets & LB SG Egress CIDR due to differences in subnet naming between regions 
-  aws_private_subnet  = "lnrs-clm-prod-private-eu-west-2*"
-  aws_public_subnet   = "lnrs-clm-prod-public-eu-west-2*"
+  aws_private_subnet  = "lnrs-clm-prod-private-us-east-2*"
+  aws_public_subnet   = "lnrs-clm-prod-public-us-east-2*"
   aws_public_subnet_cidr = ["10.223.128.0/28", "10.223.128.16/28", "10.223.128.32/28"]
-
-  # Limit ASG to zones A & B
-  aws_public_subnet_az_a   = "subnet-0ba31bdc9a5c7849b"
-  aws_public_subnet_az_b   = "subnet-01589813e8b57ae3d"
 
   # SSL Certificate
   certificate_arn   = "arn:aws:acm:eu-west-2:485575125510:certificate/73c1f84b-a576-4bfd-a632-c387443aa9e8"
@@ -44,6 +40,6 @@ inputs = {
   # Tags
   tag_owner_email   = "tas-global@lexisnexisrisk.com"
   tag_support_email = "tas-global@lexisnexisrisk.com"
-  tag_market        = "uk"
+  tag_market        = "us"
 
 }
