@@ -32,10 +32,14 @@ inputs = {
   # Define subnets & LB SG Egress CIDR due to differences in subnet naming between regions 
   aws_private_subnet  = "lnrs-clm-prod-private-us-east-2*"
   aws_public_subnet   = "lnrs-clm-prod-public-us-east-2*"
-  aws_public_subnet_cidr = ["10.223.128.0/28", "10.223.128.16/28", "10.223.128.32/28"]
+  aws_public_subnet_cidr = ["10.229.129.0/28", "10.229.129.16/28", "10.229.129.32/28"]
+
+  # Limit ASG to zones A & B
+  aws_public_subnet_az_a   = "subnet-04f17bfb1c97fe88a"
+  aws_public_subnet_az_b   = "subnet-05a71d2b16109c82a"
 
   # SSL Certificate
-  certificate_arn   = "arn:aws:acm:eu-west-2:485575125510:certificate/73c1f84b-a576-4bfd-a632-c387443aa9e8"
+  certificate_arn   = "arn:aws:acm:us-east-2:485575125510:certificate/d5ab77a9-66b0-4f3b-bf83-fe0483f62961"
   
   # Tags
   tag_owner_email   = "tas-global@lexisnexisrisk.com"

@@ -41,11 +41,11 @@ variable "aws_public_subnet" {
 }
 
 variable "aws_public_subnet_az_a" {
-  description = "Public subnet az a"
+  description = "Public subnet AZ A to limit ASG instance deploy to"
 }
 
 variable "aws_public_subnet_az_b" {
-  description = "Public subnet az b"
+  description = "Public subnet AZ B to limit ASG instance deploy to"
 }
 
 variable "aws_public_subnet_cidr" {
