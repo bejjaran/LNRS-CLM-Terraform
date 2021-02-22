@@ -41,6 +41,14 @@ resource "aws_security_group" "web-lb" {
     description = "HTTPS External Monitoring Inbound"
   }
 
+  ingress {
+    from_port   = "443"
+    to_port     = "443"
+    protocol    = "tcp"
+    cidr_blocks = ["54.244.52.192/26", "54.241.32.64/26", "54.245.168.0/26", "54.183.255.128/26", "15.177.0.0/18", "107.23.255.0/26", "54.243.31.192/26"]
+    description = "HTTPS External Monitoring Inbound (AWS R53 Health Checks US & Global)"
+  }
+
   egress {
     from_port   = "443"
     to_port     = "443"
