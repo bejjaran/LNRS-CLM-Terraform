@@ -41,6 +41,7 @@ resource "aws_lb_target_group" "web-443" {
   health_check {
     protocol = "HTTPS"
     matcher = "200,301"
+    path = "/cip"
   }
 
 }
