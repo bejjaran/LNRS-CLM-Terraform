@@ -6,7 +6,7 @@ inputs = {
 
   # Launch Config
   instance_size = "t3.medium"
-  ami_id = "ami-06756e9a334b66424" # 2.3.2
+  ami_id = "ami-0a9ec959721e901d8" # 2.3.2
   iam_role = "TAS_Monitoring"
   asg_min = 1
   asg_max = 1
