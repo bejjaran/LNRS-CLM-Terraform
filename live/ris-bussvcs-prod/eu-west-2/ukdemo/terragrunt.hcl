@@ -8,7 +8,7 @@ inputs = {
   instance_size = "t3.medium"
   ami_id = "ami-0455aecb2cbe296f1" # 1.0.15
   iam_role = "TAS-Monitoring"
-  asg_min = 1
+  asg_min = 0
   asg_max = 1
   disk_size = 100
 
