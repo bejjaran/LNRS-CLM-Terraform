@@ -189,12 +189,12 @@ build-ris-bussvcs-prod/eu-west-2/ukdemo:
     AWS_PROFILE: 'ris-bussvcs-prod'
   before_script:
     - export ADFS_PROFILE=(
-        'ris-bussvcs-prod'
         'ris-bussvcs-dev'
+        'ris-bussvcs-prod'
       )
     - export ADFS_ROLE_ARN=(
-        'arn:aws:iam::485575125510:role/ADFS-TAS-Terraform'
         'arn:aws:iam::152186781777:role/ADFS-TAS-Terraform'
+        'arn:aws:iam::485575125510:role/ADFS-TAS-Terraform'
       )
     - export TF_VAR_mssql_admin_username=$mssql_username
     - export TF_VAR_mssql_admin_password=$mssql_password
@@ -214,12 +214,12 @@ ris-bussvcs-prod/eu-west-2/ukdemo:
     AWS_PROFILE: 'ris-bussvcs-prod'
   before_script:
     - export ADFS_PROFILE=(
-        'ris-bussvcs-prod'
         'ris-bussvcs-dev'
+        'ris-bussvcs-prod'
       )
     - export ADFS_ROLE_ARN=(
-        'arn:aws:iam::485575125510:role/ADFS-TAS-Terraform'
         'arn:aws:iam::152186781777:role/ADFS-TAS-Terraform'
+        'arn:aws:iam::485575125510:role/ADFS-TAS-Terraform'
       )
   dependencies: [build-ris-bussvcs-prod/eu-west-2/ukdemo]
   environment:
@@ -229,56 +229,6 @@ ris-bussvcs-prod/eu-west-2/ukdemo:
       - master
     changes:
       - live/ris-bussvcs-prod/eu-west-2/ukdemo/**/*
-      - live/*.hcl
-      - modules/**/*
-
-build-ris-bussvcs-prod/us-east-2/usdemo:
-  extends: .build
-  variables:
-    ROOT_DIR: 'live/ris-bussvcs-prod/us-east-2/usdemo'
-    AWS_PROFILE: 'ris-bussvcs-prod'
-  before_script:
-    - export ADFS_PROFILE=(
-        'ris-bussvcs-prod'
-        'ris-bussvcs-dev'
-      )
-    - export ADFS_ROLE_ARN=(
-        'arn:aws:iam::485575125510:role/ADFS-TAS-Terraform'
-        'arn:aws:iam::152186781777:role/ADFS-TAS-Terraform'
-      )
-    - export TF_VAR_mssql_admin_username=$mssql_username
-    - export TF_VAR_mssql_admin_password=$mssql_password
-  only:
-    refs:
-      - merge_requests
-      - master
-    changes:
-      - live/ris-bussvcs-prod/us-east-2/usdemo/**/*
-      - live/*.hcl
-      - modules/**/*
-
-ris-bussvcs-prod/us-east-2/usdemo:
-  extends: .deploy
-  variables:
-    ROOT_DIR: 'live/ris-bussvcs-prod/us-east-2/usdemo'
-    AWS_PROFILE: 'ris-bussvcs-prod'
-  before_script:
-    - export ADFS_PROFILE=(
-        'ris-bussvcs-prod'
-        'ris-bussvcs-dev'
-      )
-    - export ADFS_ROLE_ARN=(
-        'arn:aws:iam::485575125510:role/ADFS-TAS-Terraform'
-        'arn:aws:iam::152186781777:role/ADFS-TAS-Terraform'
-      )
-  dependencies: [build-ris-bussvcs-prod/us-east-2/usdemo]
-  environment:
-    name: ris-bussvcs-prod/us-east-2/usdemo
-  only:
-    refs:
-      - master
-    changes:
-      - live/ris-bussvcs-prod/us-east-2/usdemo/**/*
       - live/*.hcl
       - modules/**/*
 
