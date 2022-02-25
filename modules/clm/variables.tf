@@ -32,6 +32,11 @@ variable "aws_lb_subnets" {
   description = "The subnets you wish to deploy load balancers into (e.g eu-west-1a, eu-west-1b)"
 }
 
+variable "aws_lb_listener_https_port" {
+  description = "Load Balancer HTTPS Listener port"
+  type = number
+}
+
 variable "aws_private_subnet" {
   description = "The private subnet"
 }

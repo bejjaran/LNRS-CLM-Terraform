@@ -71,7 +71,7 @@ resource "aws_lb_listener" "web-80" {
 # Web - HTTPs
 resource "aws_lb_listener" "web-443" {
   load_balancer_arn  = aws_lb.web.arn
-  port               = "443"
+  port               = var.aws_lb_listener_https_port
   protocol           = "HTTPS"
   ssl_policy         = "ELBSecurityPolicy-TLS-1-2-Ext-2018-06"
   certificate_arn    = var.certificate_arn

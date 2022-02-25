@@ -4,13 +4,14 @@ include {
 
 inputs = {
 
-  # Launch Config
+  # Auto Scaling & LB
   instance_size = "t3.medium"
   ami_id = "ami-0380a227012b9b4fc" # v1.0.15
   iam_role = "TAS_Monitoring"
   asg_min = 1
   asg_max = 1
   disk_size = 100
+  aws_lb_listener_https_port = 443
 
   # RDS Config
   rds_size = "db.t3.medium"
