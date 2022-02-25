@@ -9,9 +9,9 @@ inputs = {
   ami_id = "ami-0610b05b0d90a6a45" # 2.3.2
   iam_role = "TAS_Monitoring"
   asg_min = 2
-  asg_max = 2
+  asg_max = 4
   disk_size = 100
-  aws_lb_listener_https_port = 443
+  aws_lb_listener_https_port = 444
 
   # RDS Config
   rds_size = "db.t3.medium"
