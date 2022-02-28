@@ -11,7 +11,7 @@ inputs = {
   asg_min = 2
   asg_max = 4
   disk_size = 100
-  aws_lb_listener_https_port = 444
+  aws_lb_listener_https_port = 443
 
   # RDS Config
   rds_size = "db.t3.medium"
