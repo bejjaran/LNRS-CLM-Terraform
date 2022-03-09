@@ -6,7 +6,7 @@ inputs = {
 
   # Auto Scaling & LB
   instance_size = "t3.medium"
-  ami_id = "ami-0a9ec959721e901d8" # 2.3.2
+  ami_id = "ami-053c2aff3264a925a" # 2.5.6
   iam_role = "TAS_Monitoring"
   asg_min = 1
   asg_max = 1
