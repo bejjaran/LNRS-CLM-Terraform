@@ -40,7 +40,7 @@ inputs = {
   aws_public_subnet_az_b   = "subnet-0bb7375df1521d6a1"
 
   # SSL Certificate
-  certificate_arn   = "arn:aws:acm:us-east-2:152186781777:certificate/4a57f981-84da-412b-8537-6887bab2d740"
+  certificate_arn   = "arn:aws:acm:us-east-2:152186781777:certificate/1c7b4ee2-0b8d-490f-b1c0-a29e830c634f"
   
   # Tags
   tag_owner_email   = "tas-uk@lexisnexisrisk.com"
