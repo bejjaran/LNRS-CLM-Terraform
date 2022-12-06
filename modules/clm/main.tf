@@ -97,10 +97,6 @@ resource "aws_mq_broker" "mq" {
   publicly_accessible        = var.publicly_accessible
   apply_immediately          = var.apply_immediately
   auto_minor_version_upgrade = var.auto_minor_version_upgrade
-  log_enabled                = var.log_enabled
-  encryption_enabled         = var.encryption_enabled
-  use_aws_owned_key          = var.use_aws_owned_key
-  kms_mq_key_arn             = var.kms_mq_key_arn
   security_groups            = ["${aws_security_group.mq.id}"]
   subnet_ids                 = [var.aws_public_subnet_az_a, var.aws_public_subnet_az_b]
 

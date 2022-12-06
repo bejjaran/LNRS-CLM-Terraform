@@ -247,24 +247,6 @@ variable "mq_application_password" {
   description = "Application password"
 }
 
-variable "encryption_enabled" {
-  type        = bool
-  default     = true
-  description = "Enable/disable Amazon MQ encryption at rest"
-}
-
-variable "kms_mq_key_arn" {
-  type        = string
-  default     = null
-  description = "ARN of the AWS KMS key used for Amazon MQ encryption"
-}
-
-variable "use_aws_owned_key" {
-  type        = bool
-  default     = true
-  description = "Boolean to enable an AWS owned Key Management Service (KMS) Customer Master Key (CMK) for Amazon MQ encryption that is not in your account"
-}
-
 
 ###########
 

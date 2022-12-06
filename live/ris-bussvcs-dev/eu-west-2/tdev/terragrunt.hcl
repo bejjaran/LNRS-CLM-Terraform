@@ -32,9 +32,6 @@ inputs = {
   apply_immediately          = true
   auto_minor_version_upgrade = false
   log_enabled                = false
-  encryption_enabled         = true
-  use_aws_owned_key          = true
-  kms_mq_key_arn             = ""
 
   # Basics
   environment           = "techdev"
