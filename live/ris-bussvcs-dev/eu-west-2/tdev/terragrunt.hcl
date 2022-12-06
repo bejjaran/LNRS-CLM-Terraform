@@ -26,17 +26,12 @@ inputs = {
   # RabbitMQ
   engine_type                = "RabbitMQ"
   engine_version             = "3.10.10"
-  host_instance_type         = "mq.t3.micro"
-  apply_immediately          = true
-  auto_minor_version_upgrade = false
   deployment_mode            = "CLUSTER_MULTI_AZ"
   host_instance_type         = "mq.m5.large"
   publicly_accessible        = false
-  log_enabled                = false
-  encryption_enabled         = true
-  kms_mq_key_arn             = ""
-  use_aws_owned_key          = true
   apply_immediately          = true
+  auto_minor_version_upgrade = false
+  log_enabled                = false
 
   # Basics
   environment           = "techdev"
