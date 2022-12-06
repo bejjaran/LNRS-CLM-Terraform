@@ -96,7 +96,6 @@ resource "aws_mq_broker" "mq" {
   apply_immediately          = var.apply_immediately
   auto_minor_version_upgrade = var.auto_minor_version_upgrade
   deployment_mode            = var.deployment_mode
-  host_instance_type         = var.host_instance_type
   publicly_accessible        = var.publicly_accessible
   log_enabled                = var.log_enabled
   encryption_enabled         = var.encryption_enabled
