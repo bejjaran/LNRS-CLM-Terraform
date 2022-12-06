@@ -167,6 +167,105 @@ variable "mssql_timezone" {
   //default = "US Eastern Standard Time"  
 }
 
+# RabbitMQ
+
+variable "apply_immediately" {
+  type        = bool
+  default     = false
+  description = "Specifies whether any cluster modifications are applied immediately, or during the next maintenance window"
+}
+
+variable "auto_minor_version_upgrade" {
+  type        = bool
+  default     = false
+  description = "Enables automatic upgrades to new minor versions for brokers, as Amazon releases updates"
+}
+
+variable "deployment_mode" {
+  type        = string
+  default     = "CLUSTER_MULTI_AZ"
+  description = "The deployment mode of the broker. Supported: SINGLE_INSTANCE, CLUSTER_MULTI_AZ"
+}
+
+variable "engine_type" {
+  type        = string
+  default     = "RabbitMQ"
+  description = "Type of broker engine, `ActiveMQ` or `RabbitMQ`"
+}
+
+variable "engine_version" {
+  type        = string
+  default     = "3.10.10"
+  description = "The version of the broker engine. See https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html for more details"
+}
+
+variable "host_instance_type" {
+  type        = string
+  default     = "mq.t3.micro"
+  description = "The broker's instance type. e.g. mq.t3.micro, mq.m5.large"
+}
+
+variable "publicly_accessible" {
+  type        = bool
+  default     = false
+  description = "Whether to enable connections from applications outside of the VPC that hosts the broker's subnets"
+}
+
+variable "log_enabled" {
+  type        = bool
+  default     = true
+  description = "Enables general logging via CloudWatch"
+}
+
+variable "maintenance_day_of_week" {
+  type        = string
+  default     = "SUNDAY"
+  description = "The maintenance day of the week. e.g. MONDAY, TUESDAY, or WEDNESDAY"
+}
+
+variable "maintenance_time_of_day" {
+  type        = string
+  default     = "06:00"
+  description = "The maintenance time, in 24-hour format. e.g. 02:00"
+}
+
+variable "maintenance_time_zone" {
+  type        = string
+  default     = "UTC"
+  description = "The maintenance time zone, in either the Country/City format, or the UTC offset format. e.g. CET"
+}
+
+variable "mq_application_user" {
+  type        = string
+  default     = "clm-user"
+  description = "Application username"
+}
+
+variable "mq_application_password" {
+  type        = string
+  default     = "c44fJDE2-i%vsZvwVk2c"
+  description = "Application password"
+}
+
+variable "encryption_enabled" {
+  type        = bool
+  default     = true
+  description = "Enable/disable Amazon MQ encryption at rest"
+}
+
+variable "kms_mq_key_arn" {
+  type        = string
+  default     = null
+  description = "ARN of the AWS KMS key used for Amazon MQ encryption"
+}
+
+variable "use_aws_owned_key" {
+  type        = bool
+  default     = true
+  description = "Boolean to enable an AWS owned Key Management Service (KMS) Customer Master Key (CMK) for Amazon MQ encryption that is not in your account"
+}
+
+
 ###########
 
 locals { 

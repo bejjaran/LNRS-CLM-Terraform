@@ -231,3 +231,32 @@ resource "aws_security_group_rule" "db" {
   source_security_group_id = aws_security_group.web.id
   security_group_id        = aws_security_group.db.id
 }
+
+# RabbitMQ
+resource "aws_security_group" "mq" {
+
+  name        = "${var.tag_application_short}-${var.environment_short}-mq"
+  description = title("${var.environment} LNRS RabbitMQ Rules")
+  vpc_id      = data.aws_vpc.selected.id
+  tags        = merge(map("Name", "${var.tag_application_short}-${var.environment_short}-mq"), local.default_tags)
+  
+  # Internal Network to mgmt interface
+  ingress {
+    from_port   = "443"
+    to_port     = "443"
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"]
+    description = "TEMP - Remove me after inital tests"
+  }
+
+  ingress {
+    from_port       = "5671"
+    to_port         = "5671"
+    protocol        = "tcp"
+    security_groups = ["${aws_security_group.web-lb.id}"]
+    description     = "AMQP Inbound"
+  }  
+
+  depends_on = [aws_security_group.web-lb]
+
+}
