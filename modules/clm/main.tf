@@ -92,17 +92,16 @@ resource "aws_mq_broker" "mq" {
 
   engine_type                = var.engine_type
   engine_version             = var.engine_version
+  deployment_mode            = var.deployment_mode
   host_instance_type         = var.host_instance_type
+  publicly_accessible        = var.publicly_accessible
   apply_immediately          = var.apply_immediately
   auto_minor_version_upgrade = var.auto_minor_version_upgrade
-  deployment_mode            = var.deployment_mode
-  publicly_accessible        = var.publicly_accessible
   log_enabled                = var.log_enabled
   encryption_enabled         = var.encryption_enabled
-  kms_mq_key_arn             = var.kms_mq_key_arn
   use_aws_owned_key          = var.use_aws_owned_key
+  kms_mq_key_arn             = var.kms_mq_key_arn
   security_groups            = ["${aws_security_group.mq.id}"]
-  apply_immediately          = var.apply_immediately
   subnet_ids                 = [var.aws_public_subnet_az_a, var.aws_public_subnet_az_b]
 
   user {
