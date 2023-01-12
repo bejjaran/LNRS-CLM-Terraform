@@ -105,7 +105,7 @@ resource "aws_mq_broker" "mq" {
     password = var.mq_application_password
   }
 
-  logs {
-    general = var.log_enabled
-   }
+  #logs {
+  #  general = var.log_enabled
+  #}
 }
