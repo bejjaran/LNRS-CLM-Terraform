@@ -213,7 +213,7 @@ variable "publicly_accessible" {
 
 variable "log_enabled" {
   type        = bool
-  default     = true
+  default     = false
   description = "Enables general logging via CloudWatch"
 }
 
